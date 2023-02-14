@@ -1,0 +1,28 @@
+.form-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-details > * {
+    margin-bottom: 10px;
+}
+
+.form-details > button {
+    margin-top: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 15px 10px;
+    cursor: pointer;
+}
+
+.form-details > button:hover {
+    animation: btn-hover 0.25s ease-out forwards;
+}
+
+@keyframes btn-hover {
+    to {
+        background-color: bisque;
+    }
+}
