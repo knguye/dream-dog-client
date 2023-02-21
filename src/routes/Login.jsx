@@ -2,13 +2,14 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { useState, useEffect } from 'react';
 import '../styles/login.css';
+import '../styles/common.css'
 import { useNavigate } from 'react-router-dom';
 
 export default function Login(){
     return (
         <div className={`page-container`}>
             <div className={`section-container`}>
-                <h1>DREAM DOG</h1>
+                <h1>Dream Dog</h1>
             </div>
 
             <div className={`section-container`}>

@@ -1,3 +1,5 @@
+@import './common.css';
+
 .form-details {
     display: flex;
     flex-direction: column;
@@ -21,8 +23,18 @@
     animation: btn-hover 0.25s ease-out forwards;
 }
 
+input {
+    border-radius: 5px;
+    overflow: 'hidden';
+
+    padding: 10px;
+    width: 200px;
+}
+
+
+
 @keyframes btn-hover {
     to {
-        background-color: bisque;
+        background-color: var(--primary-color);
     }
 }
