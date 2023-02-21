@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
@@ -9,11 +8,12 @@ export default function Home() {
         navigate('/');
     }
 
+    // TODO: Return regular screen if loading == false, else show splash screen
+
     return (
         <div className='page-container'>
             <h1>Homepage</h1>
             <button onClick={LogoutUser}>Logout</button>
-        </div>
-        
+        </div> 
     )
 }
