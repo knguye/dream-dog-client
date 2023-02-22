@@ -9,8 +9,10 @@ import {
 } from 'react-router-dom';
 
 import Login from './routes/Login.jsx';
+import Root from './routes/Root.jsx';
 import Home from './routes/Home.jsx';
 import ErrorPage from './routes/ErrorPage.jsx'
+import LoadingScreen from './components/loadingScreen.jsx';
 
 
 const router = createHashRouter([
@@ -20,8 +22,15 @@ const router = createHashRouter([
         errorElement: <ErrorPage/>
     },
     {
-        path: "/home",
-        element: <Home/>,
+        path: "/root",
+        element: <Root/>,
+        errorElement: <ErrorPage/>,
+        children: [
+            {
+                path: "/root/home",
+                element: <Home/>
+            }
+        ]
     }
 ])
 
@@ -30,7 +39,7 @@ const router = createHashRouter([
 function render() {
   ReactDOM.render(
         <Provider store={store}>
-            <RouterProvider router={router}/>
+            <RouterProvider router={router} fallbackElement={<LoadingScreen/>}/>
         </Provider>,
     document.body);
 }

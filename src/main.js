@@ -16,7 +16,6 @@ const createWindow = () => {
     height: 600,
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
-      //webSecurity: false
     },
   });
 
@@ -52,9 +51,15 @@ app.on('activate', () => {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
 app.whenReady().then(() => {
-  protocol.registerFileProtocol('file', (request, callback) => {
-    const pathname = request.url.replace('file:///', '');
-    callback(pathname);
+  protocol.registerFileProtocol("media-loader", (request, callback) => {
+    const url = request.url.replace("media-loader://", "");
+    try {
+      return callback(url);
+    }
+    catch (err) {
+      console.error(err);
+      return callback(404);
+    }
   });
 
   session.defaultSession.webRequest.onHeadersReceived((details, callback) => {

@@ -1,12 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const usersSlice = createSlice({
-    name: 'users',
+    name: 'user',
     initialState: {
         id: null,
         email: null,
         fullname: null,
-        username: null,
         phone_number: null,
     },
     reducers: {

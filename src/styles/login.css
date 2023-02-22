@@ -1,5 +1,9 @@
 @import './common.css';
 
+#login-page{
+
+}
+
 .form-details {
     display: flex;
     flex-direction: column;
@@ -25,8 +29,6 @@
 
 input {
     border-radius: 5px;
-    overflow: 'hidden';
-
     padding: 10px;
     width: 200px;
 }
