@@ -2,7 +2,6 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 
 import '../styles/login.css';
-import '../styles/common.css'
 
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +11,7 @@ import { changeUser } from '../features/user/userSlice';
 import { firebase } from '../firebase/config';
 
 import { InlineWarning, WarningMessage } from '../components/warnings.jsx';
-import LoadingScreen from '../components/loadingScreen.jsx';
+import LoadingScreen from '../components/LoadingScreen.jsx';
 
 export default function Login(){
     const serverDomain = 'http://192.168.0.137:3001';

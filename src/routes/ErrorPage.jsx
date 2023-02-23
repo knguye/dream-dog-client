@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useRouteError } from 'react-router-dom';
+import { Link, useRouteError } from 'react-router-dom';
 
 export default function ErrorPage() {
     // TODO: Add various renders for different error codes
@@ -13,6 +13,7 @@ export default function ErrorPage() {
             <p>
                 <i>{error.statusText || error.message}</i>
             </p>
+            <Link to={'/root'}>Return to Home</Link>
         </div>
 
     )

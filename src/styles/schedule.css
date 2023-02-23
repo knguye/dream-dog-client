@@ -1,0 +1,27 @@
+textarea,
+input,
+button {
+  font-family: inherit;
+  border: none;
+  border-radius: 0px;
+  padding: 0.5rem 0.75rem;
+  box-shadow: none;
+  background-color: white;
+  line-height: 1.5;
+  margin: 0;
+}
+button {
+  color: inherit;
+  font-weight: 500;
+}
+
+textarea:hover,
+input:hover,
+button:hover {
+  box-shadow: none;
+}
+
+button:active {
+  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.4);
+  transform: translateY(1px);
+}

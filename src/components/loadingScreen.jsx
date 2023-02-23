@@ -6,7 +6,7 @@ export default function LoadingScreen() {
 
     return (
         <div className="page-container" id="loading-page">
-            <img className="loading-logo" src="media-loader://src/assets/logo.png" width="250" height="250"/>
+            <img className="loading-logo" src="media-loader://src/assets/logo.png" width="200" height="200"/>
         </div>
     )
 }

@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, Outlet, Link } from 'react-router-dom';
-import '../styles/sidebar.css';
+import WelcomeScreen from '../components/WelcomeScreen.jsx';
+import Sidebar from '../components/Sidebar.jsx';
 
-export default function Root() {
+export default function Root(props) {
     const navigate = useNavigate();
-    
+    const [currentRoute, setCurrentRoute] = React.useState('root')
+
     function LogoutUser() {
         navigate('/');
     }
@@ -15,32 +17,14 @@ export default function Root() {
         2. Context menu on bottom, drawer comes out for logout, user settings, etc
         3. Display user full name at top
     */
-
     const user = useSelector((state) => state.user);
-
+    
     return (
         <>
-            <div id="sidebar">
-                <h1>Dream Dog</h1>
-                <nav>
-                <ul>
-                    <li>
-                    <Link to={`/root/home`}>Home</Link>
-                    </li>
-                    <li>
-                    <a href={`/schedule`}>Schedule</a>
-                    </li>
-                    <li>
-                    <a href={`/contacts`}>Contacts</a>
-                    </li>
-                    <li>
-                    <a href={`/payment`}>Payment</a>
-                    </li>
-                </ul>
-                </nav>
-            </div>
+            <Sidebar setCurrentRoute={setCurrentRoute}></Sidebar>
             <div id="detail">
-                <Outlet/>
+                {currentRoute === 'root' ? <WelcomeScreen fullname={user.fullname}/> : <Outlet/>}
+                
             </div>
         </> 
     )
