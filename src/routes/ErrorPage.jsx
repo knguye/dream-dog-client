@@ -11,7 +11,7 @@ export default function ErrorPage() {
             <h1>Page not found!</h1>
             <p>Please contact IT for help.</p>
             <p>
-                <i>{error.statusText || error.message}</i>
+                <i>{error.statusText ? error.statusText : error.message}</i>
             </p>
             <Link to={'/root'}>Return to Home</Link>
         </div>

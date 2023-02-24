@@ -18,12 +18,13 @@ export default function Root(props) {
         3. Display user full name at top
     */
     const user = useSelector((state) => state.user);
-    
+    console.log(user);
+
     return (
         <>
             <Sidebar setCurrentRoute={setCurrentRoute}></Sidebar>
             <div id="detail">
-                {currentRoute === 'root' ? <WelcomeScreen fullname={user.fullname}/> : <Outlet/>}
+                {currentRoute === 'root' ? <WelcomeScreen firstName={user.firstName}/> : <Outlet/>}
                 
             </div>
         </> 

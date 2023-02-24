@@ -5,8 +5,9 @@ export const usersSlice = createSlice({
     initialState: {
         id: null,
         email: null,
-        fullname: null,
-        phone_number: null,
+        firstName: null,
+        lastName: null,
+        phoneNumber: null,
     },
     reducers: {
         changeUser: (state, action) => {

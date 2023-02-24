@@ -32,7 +32,7 @@ export default function Schedule() {
 function clientList(){
     return (
         <div>
-
+            
         </div>
     )
 }

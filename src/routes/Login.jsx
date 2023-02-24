@@ -67,6 +67,7 @@ export default function Login(){
                         }
                         console.log(user);
                         dispatch(changeUser(user));
+                        
                     })
                     .then(() => {
                         dispatch(toggleLoading(false));
@@ -123,10 +124,7 @@ export default function Login(){
     return (
         ( !loading ?
             <div className={`page-container`} id="login-page">
-                <div className={`section-container`}>
-                    <h1>Dream Dog</h1>
-                </div>
-
+                <h1>Dream Dog</h1>
                 <div className={`section-container`}>
                     <LoginForm></LoginForm>
                 </div>
