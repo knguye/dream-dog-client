@@ -14,7 +14,7 @@ import { InlineWarning, WarningMessage } from '../components/warnings.jsx';
 import LoadingScreen from '../components/LoadingScreen.jsx';
 
 export default function Login(){
-    const serverDomain = 'http://192.168.0.137:3001';
+    const serverDomain = 'http://192.168.0.107:3001';
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -75,6 +75,7 @@ export default function Login(){
                     })
                     .catch ((err) => {
                         console.error(err); // Fetch error (Serverside thrown)
+                        dispatch(toggleLoading(false));
                         return;
                     }); 
                 })
@@ -86,7 +87,7 @@ export default function Login(){
                         // TODO: Check for duplicate errors
                         setErrors([error.code]);
                     }
-
+                    
                     return;
                 })          
         }

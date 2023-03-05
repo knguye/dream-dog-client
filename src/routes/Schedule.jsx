@@ -30,6 +30,12 @@ export default function Schedule() {
 }
 
 function clientList(){
+    /*
+        TODO:   
+        1. Take datetime and put in fetch body
+        2. Fetch appointments that are in datetime range for that day
+        3. Map list of appointments for client list, return that component
+    */
     return (
         <div>
             
